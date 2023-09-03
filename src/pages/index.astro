@@ -1,15 +1,18 @@
 ---
+import { Image } from "astro:assets";
 import RootLayout from "../layouts/root-layout.astro";
+import PortfolioCover from "../../public/portfolio-cover.png";
+import Skill from "../components/Skill";
 ---
 
 <RootLayout title="Prawish Biharie">
   <!-- Hero -->
   <section
     id="hero"
-    class="max-w-5xl mx-auto px-4 h-96 w-full flex flex-col items-center justify-center text-center gap-4"
+    class="max-w-3xl mx-auto px-4 h-[calc(100vh-5rem)] w-full flex flex-col items-center justify-center text-center gap-4"
   >
     <div class="max-w-prose">
-      <h1 class="text-slate-100 text-5xl font-bold">Prawish Biharie</h1>
+      <h1 class="text-stone-100 text-5xl font-bold">Prawish Biharie</h1>
       <h3 class="mt-4">
         Electrical engineer turned software pro. Bridging hardware-software gap,
         embracing innovation through continuous learning.
@@ -21,18 +24,17 @@ import RootLayout from "../layouts/root-layout.astro";
         <span class="w-2 h-2 rounded-full bg-gray-600"></span>
         <h5 class="font-semibold">Full Stack Developer</h5>
       </div>
-      <div class="flex items-center gap-2 rounded-md px-3 py-1">
-        <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-amber-600"></span>
         <p class="font-semibold">Available for work</p>
       </div>
     </div>
   </section>
 
-  <div class="bg-slate-950 max-w-5xl mx-auto px-4 rounded-xl">
-    <!-- About -->
-    <section id="about" class="py-16 h-full w-full">
-      <div class="max-w-3xl mx-auto text-center flex flex-col gap-8">
-        <h3 class="text-3xl font-semibold text-slate-200">About</h3>
+  <div class="bg-stone-950 px-4">
+    <section id="about" class="max-w-3xl mx-auto py-16 h-full w-full">
+      <div class="text-center flex flex-col gap-8">
+        <h3 class="text-3xl font-semibold text-stone-200">About</h3>
         <p>
           {
             `Hello, I'm Prawish Biharie, a seasoned professional who made a smooth transition from electrical engineering to software engineering, capitalizing on my 3+ years of experience. My background equips me with an analytical mindset and strong problem-solving skills, which I honed in electrical engineering, giving me a unique edge in crafting innovative solutions that bridge the gap between hardware and software realms.`
@@ -46,86 +48,41 @@ import RootLayout from "../layouts/root-layout.astro";
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="py-16 h-full w-full">
-      <div class="max-w-3xl mx-auto text-center flex flex-col gap-8">
-        <h3 class="text-3xl font-semibold text-slate-200 mb-4">Skills</h3>
+    <section id="skills" class="max-w-3xl mx-auto py-16 h-full w-full">
+      <div class="text-center flex flex-col gap-8">
+        <h3 class="text-3xl font-semibold text-stone-200 mb-4">Skills</h3>
 
         <ul class="flex flex-wrap justify-center gap-4">
-          <li
-            class="bg-slate-600 text-slate-200 border-slate-400 px-4 py-2 rounded-md border"
-          >
-            HTML
-          </li>
-          <li
-            class="bg-slate-600 text-slate-200 border-slate-400 px-4 py-2 rounded-md border"
-          >
-            CSS
-          </li>
-          <li
-            class="bg-slate-600 text-slate-200 border-slate-400 px-4 py-2 rounded-md border"
-          >
-            Javascript
-          </li>
-          <li
-            class="bg-slate-600 text-slate-200 border-slate-400 px-4 py-2 rounded-md border"
-          >
-            Typescript
-          </li>
-          <li
-            class="bg-slate-600 text-slate-200 border-slate-400 px-4 py-2 rounded-md border"
-          >
-            React
-          </li>
-          <li
-            class="bg-slate-600 text-slate-200 border-slate-400 px-4 py-2 rounded-md border"
-          >
-            Next.js
-          </li>
-          <li
-            class="bg-slate-600 text-slate-200 border-slate-400 px-4 py-2 rounded-md border"
-          >
-            Astro
-          </li>
-          <li
-            class="bg-slate-600 text-slate-200 border-slate-400 px-4 py-2 rounded-md border"
-          >
-            Node.js
-          </li>
-          <li
-            class="bg-slate-600 text-slate-200 border-slate-400 px-4 py-2 rounded-md border"
-          >
-            TailwindCSS
-          </li>
-          <li
-            class="bg-slate-600 text-slate-200 border-slate-400 px-4 py-2 rounded-md border"
-          >
-            Express
-          </li>
-          <li
-            class="bg-slate-600 text-slate-200 border-slate-400 px-4 py-2 rounded-md border"
-          >
-            PostgreSQL
-          </li>
+          <li><Skill>HTML</Skill></li>
+          <li><Skill>CSS</Skill></li>
+          <li><Skill>Javascript</Skill></li>
+          <li><Skill>Typescript</Skill></li>
+          <li><Skill>React</Skill></li>
+          <li><Skill>Next.js</Skill></li>
+          <li><Skill>Astro</Skill></li>
+          <li><Skill>Node.js</Skill></li>
+          <li><Skill>TailwindCSS</Skill></li>
+          <li><Skill>Express</Skill></li>
+          <li><Skill>PostgreSQL</Skill></li>
         </ul>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="py-16 h-full w-full">
-      <div class="max-w-3xl mx-auto text-center flex flex-col gap-8">
+    <section id="projects" class="max-w-3xl mx-auto py-16 h-full w-full">
+      <div class="text-center flex flex-col gap-8">
         <div class="">
-          <h3 class="text-3xl font-semibold text-slate-200 mb-4">Projects</h3>
+          <h3 class="text-3xl font-semibold text-stone-200 mb-4">Projects</h3>
           <p class="text-sm">
             These are some of my top projects. To see all my projects, visit my
             github profile
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-slate-100 w-full aspect-[1/1.25] rounded-md"></div>
-          <div class="bg-slate-100 w-full aspect-[1/1.25] rounded-md"></div>
-          <div class="bg-slate-100 w-full aspect-[1/1.25] rounded-md"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-stone-800 w-full aspect-video rounded-md"></div>
+          <div class="bg-stone-800 w-full aspect-video rounded-md"></div>
+          <div class="bg-stone-800 w-full aspect-video rounded-md"></div>
+          <div class="bg-stone-800 w-full aspect-video rounded-md"></div>
         </div>
       </div>
     </section>

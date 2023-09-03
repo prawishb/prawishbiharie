@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 text-slate-100 w-full py-4 px-8">
-      <div className="max-w-5xl mx-auto p-4 h-14 w-full  text-center">
-        <p>Copyright 2023. All Rights Reserved.</p>
+    <footer className="bg-stone-950 text-stone-100 w-full py-4 px-8">
+      <div className="max-w-3xl mx-auto h-14 w-full text-center flex items-center justify-center border-t border-stone-800 text-sm">
+        <p>© 2023 Prawish Biharie. All Rights Reserved.</p>
       </div>
     </footer>
   );
