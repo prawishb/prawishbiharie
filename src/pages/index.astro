@@ -1,7 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import RootLayout from "../layouts/root-layout.astro";
-import PortfolioCover from "../../public/portfolio-cover.png";
+import Section from "../components/Section/Section";
 import Skill from "../components/Skill";
 ---
 
@@ -12,7 +11,7 @@ import Skill from "../components/Skill";
     class="max-w-3xl mx-auto px-4 h-[calc(100vh-5rem)] w-full flex flex-col items-center justify-center text-center gap-4"
   >
     <div class="max-w-prose">
-      <h1 class="text-stone-100 text-5xl font-bold">Prawish Biharie</h1>
+      <h1 class="text-neutral-100 text-5xl font-bold">Prawish Biharie</h1>
       <h3 class="mt-4">
         Electrical engineer turned software pro. Bridging hardware-software gap,
         embracing innovation through continuous learning.
@@ -31,27 +30,30 @@ import Skill from "../components/Skill";
     </div>
   </section>
 
-  <div class="bg-stone-950 px-4">
-    <section id="about" class="max-w-3xl mx-auto py-16 h-full w-full">
-      <div class="text-center flex flex-col gap-8">
-        <h3 class="text-3xl font-semibold text-stone-200">About</h3>
-        <p>
+  <div class="bg-neutral-950 px-4">
+    <Section>
+      <Section.Title>About</Section.Title>
+      <Section.Description>A bit more about me</Section.Description>
+      <Section.Content>
+        <p class="mb-8 text-center">
           {
             `Hello, I'm Prawish Biharie, a seasoned professional who made a smooth transition from electrical engineering to software engineering, capitalizing on my 3+ years of experience. My background equips me with an analytical mindset and strong problem-solving skills, which I honed in electrical engineering, giving me a unique edge in crafting innovative solutions that bridge the gap between hardware and software realms.`
           }
         </p>
-        <p>
+        <p class="mb-8 text-center">
           {
             `With an unwavering passion for continuous learning, I constantly explore new methodologies, languages, and tools to stay at the forefront of the dynamic software landscape. This proactive approach ensures that my skills remain finely tuned and pertinent, allowing me to offer fresh perspectives and tackle challenges effectively in this ever-evolving field.`
           }
         </p>
-      </div>
-    </section>
+      </Section.Content>
+    </Section>
 
-    <section id="skills" class="max-w-3xl mx-auto py-16 h-full w-full">
-      <div class="text-center flex flex-col gap-8">
-        <h3 class="text-3xl font-semibold text-stone-200 mb-4">Skills</h3>
-
+    <Section id="skills">
+      <Section.Title>Skills</Section.Title>
+      <Section.Description>
+        These are all my skills that I aquired during my time programming.
+      </Section.Description>
+      <Section.Content>
         <ul class="flex flex-wrap justify-center gap-4">
           <li><Skill>HTML</Skill></li>
           <li><Skill>CSS</Skill></li>
@@ -65,27 +67,36 @@ import Skill from "../components/Skill";
           <li><Skill>Express</Skill></li>
           <li><Skill>PostgreSQL</Skill></li>
         </ul>
-      </div>
-    </section>
+      </Section.Content>
+    </Section>
 
-    <section id="projects" class="max-w-3xl mx-auto py-16 h-full w-full">
-      <div class="text-center flex flex-col gap-8">
-        <div class="">
-          <h3 class="text-3xl font-semibold text-stone-200 mb-4">Projects</h3>
-          <p class="text-sm">
-            These are some of my top projects. To see all my projects, visit my
-            github profile
-          </p>
-        </div>
-
+    <Section id="projects">
+      <Section.Title>Projects</Section.Title>
+      <Section.Description>
+        These are some of my top projects. To see all my projects, visit my
+        github profile
+      </Section.Description>
+      <Section.Content>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-stone-800 w-full aspect-video rounded-md"></div>
-          <div class="bg-stone-800 w-full aspect-video rounded-md"></div>
-          <div class="bg-stone-800 w-full aspect-video rounded-md"></div>
-          <div class="bg-stone-800 w-full aspect-video rounded-md"></div>
+          <div class="">
+            <div class="bg-neutral-800 w-full aspect-video rounded-md"></div>
+            <h2 class="text-xl font-semibold">Project Title</h2>
+          </div>
+          <div class="">
+            <div class="bg-neutral-800 w-full aspect-video rounded-md"></div>
+            <h2 class="text-xl font-semibold">Project Title</h2>
+          </div>
+          <div class="">
+            <div class="bg-neutral-800 w-full aspect-video rounded-md"></div>
+            <h2 class="text-xl font-semibold">Project Title</h2>
+          </div>
+          <div class="">
+            <div class="bg-neutral-800 w-full aspect-video rounded-md"></div>
+            <h2 class="text-xl font-semibold">Project Title</h2>
+          </div>
         </div>
-      </div>
-    </section>
+      </Section.Content>
+    </Section>
 
     <!-- Experiences -->
   </div>
