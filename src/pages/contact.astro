@@ -1,0 +1,28 @@
+---
+import RootLayout from "../layouts/RootLayout.astro";
+import Section from "../components/Section/Section";
+---
+
+<RootLayout>
+  <Section>
+    <Section.Title>Contact Me</Section.Title>
+    <Section.Content>
+      <div class="max-w-prose mx-auto text-center">
+        <p>
+          {
+            `I'm actively seeking a web developer role that challenges me to grow,
+          collaborate, and make a meaningful impact. If you're looking for a
+          dedicated developer ready to bring fresh ideas to the table, let's
+          connect and explore the possibilities together.`
+          }
+        </p>
+        <h5 class="font-medium text-neutral-100 mt-4">
+          The best way to reach me is by email at{" "}
+          <a href="mailto:prawishbiharie@gmail.com" class="text-amber-400">
+            prawishbiharie@gmail.com
+          </a>
+        </h5>
+      </div>
+    </Section.Content>
+  </Section>
+</RootLayout>

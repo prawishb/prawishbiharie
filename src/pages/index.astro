@@ -3,13 +3,14 @@ import RootLayout from "../layouts/RootLayout.astro";
 import Section from "../components/Section/Section.tsx";
 import Skill from "../components/Skill.tsx";
 import Status from "../components/Status.tsx";
+import Project from "../components/Project/Project.tsx";
 
 import skills from "../data/skills";
 import projects from "../data/projects";
 ---
 
 <RootLayout title="Prawish Biharie">
-  <Section>
+  <Section id="hero">
     <Section.Content>
       <div class="flex flex-col justify-between gap-16">
         <Status>
@@ -22,7 +23,7 @@ import projects from "../data/projects";
           class="max-w-prose mx-auto flex flex-col items-center text-center gap-2"
         >
           <h1 class="text-neutral-100 text-5xl font-bold">Prawish Biharie</h1>
-          <h5 class="font-semibold">Full Stack Developer</h5>
+          <span class="font-semibold">Full Stack Developer</span>
           <h3 class="mt-4">
             Electrical engineer turned software pro. Bridging hardware-software
             gap, embracing innovation through continuous learning.
@@ -84,13 +85,26 @@ import projects from "../data/projects";
         github profile
       </Section.Description>
       <Section.Content>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
           {
             projects.map((project) => (
-              <div class="text-center flex flex-col gap-2">
-                <div class="bg-neutral-800 w-full aspect-video rounded-md" />
-                <h2 class="text-xl font-semibold">{project.name}</h2>
-              </div>
+              <Project>
+                <Project.Image />
+                <Project.Content>
+                  <Project.Name>{project.name}</Project.Name>
+                  <Project.Description>
+                    {project.description}
+                  </Project.Description>
+
+                  {project.tags && (
+                    <ul class="flex items-center gap-2">
+                      {project.tags.map((tag, index) => (
+                        <Project.Tag>{tag}</Project.Tag>
+                      ))}
+                    </ul>
+                  )}
+                </Project.Content>
+              </Project>
             ))
           }
         </div>

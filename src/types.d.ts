@@ -6,5 +6,6 @@ type TLink = {
 type TProject = {
   name: string;
   description?: string;
-  image?: string
+  image?: string;
+  tags?: string[];
 }
