@@ -1,34 +1,45 @@
 ---
 import RootLayout from "../layouts/RootLayout.astro";
-import Section from "../components/Section/Section";
-import Skill from "../components/Skill";
+import Section from "../components/Section/Section.tsx";
+import Skill from "../components/Skill.tsx";
+import Status from "../components/Status.tsx";
+
+import skills from "../data/skills";
+import projects from "../data/projects";
 ---
 
 <RootLayout title="Prawish Biharie">
-  <!-- Hero -->
-  <section
-    id="hero"
-    class="max-w-3xl mx-auto px-4 h-[calc(100vh-5rem)] w-full flex flex-col items-center justify-center text-center gap-4"
-  >
-    <div class="max-w-prose">
-      <h1 class="text-neutral-100 text-5xl font-bold">Prawish Biharie</h1>
-      <h3 class="mt-4">
-        Electrical engineer turned software pro. Bridging hardware-software gap,
-        embracing innovation through continuous learning.
-      </h3>
-    </div>
+  <Section>
+    <Section.Content>
+      <div class="flex flex-col justify-between gap-16">
+        <Status>
+          {
+            `I'm currently searching for new oppurtunities to advance my skills. Contact me here.`
+          }
+        </Status>
 
-    <div class="flex items-center gap-8 py-2 text-sm">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-gray-600"></span>
-        <h5 class="font-semibold">Full Stack Developer</h5>
+        <div
+          class="max-w-prose mx-auto flex flex-col items-center text-center gap-2"
+        >
+          <h1 class="text-neutral-100 text-5xl font-bold">Prawish Biharie</h1>
+          <h5 class="font-semibold">Full Stack Developer</h5>
+          <h3 class="mt-4">
+            Electrical engineer turned software pro. Bridging hardware-software
+            gap, embracing innovation through continuous learning.
+          </h3>
+
+          <div class="flex items-center gap-4">
+            <button
+              class="bg-neutral-950 text-neutral-100 px-6 py-2 rounded-md"
+            >
+              Hire Me
+            </button>
+            <button class="text-neutral-100"> Download CV</button>
+          </div>
+        </div>
       </div>
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-amber-600"></span>
-        <p class="font-semibold">Available for work</p>
-      </div>
-    </div>
-  </section>
+    </Section.Content>
+  </Section>
 
   <div class="bg-neutral-950 px-4">
     <Section>
@@ -55,17 +66,13 @@ import Skill from "../components/Skill";
       </Section.Description>
       <Section.Content>
         <ul class="flex flex-wrap justify-center gap-4">
-          <li><Skill>HTML</Skill></li>
-          <li><Skill>CSS</Skill></li>
-          <li><Skill>Javascript</Skill></li>
-          <li><Skill>Typescript</Skill></li>
-          <li><Skill>React</Skill></li>
-          <li><Skill>Next.js</Skill></li>
-          <li><Skill>Astro</Skill></li>
-          <li><Skill>Node.js</Skill></li>
-          <li><Skill>TailwindCSS</Skill></li>
-          <li><Skill>Express</Skill></li>
-          <li><Skill>PostgreSQL</Skill></li>
+          {
+            skills.map((skill) => (
+              <li>
+                <Skill>{skill}</Skill>
+              </li>
+            ))
+          }
         </ul>
       </Section.Content>
     </Section>
@@ -78,26 +85,26 @@ import Skill from "../components/Skill";
       </Section.Description>
       <Section.Content>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="">
-            <div class="bg-neutral-800 w-full aspect-video rounded-md"></div>
-            <h2 class="text-xl font-semibold">Project Title</h2>
-          </div>
-          <div class="">
-            <div class="bg-neutral-800 w-full aspect-video rounded-md"></div>
-            <h2 class="text-xl font-semibold">Project Title</h2>
-          </div>
-          <div class="">
-            <div class="bg-neutral-800 w-full aspect-video rounded-md"></div>
-            <h2 class="text-xl font-semibold">Project Title</h2>
-          </div>
-          <div class="">
-            <div class="bg-neutral-800 w-full aspect-video rounded-md"></div>
-            <h2 class="text-xl font-semibold">Project Title</h2>
-          </div>
+          {
+            projects.map((project) => (
+              <div class="text-center flex flex-col gap-2">
+                <div class="bg-neutral-800 w-full aspect-video rounded-md" />
+                <h2 class="text-xl font-semibold">{project.name}</h2>
+              </div>
+            ))
+          }
         </div>
       </Section.Content>
     </Section>
 
-    <!-- Experiences -->
+    <Section id="experiences">
+      <Section.Title>Experiences</Section.Title>
+      <Section.Description>
+        The highlights of my career journey over the years
+      </Section.Description>
+      <Section.Content>
+        <div class="text-center">Work in progress...</div>
+      </Section.Content>
+    </Section>
   </div>
 </RootLayout>
