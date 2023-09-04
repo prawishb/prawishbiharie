@@ -1,12 +1,23 @@
 ---
-import RootLayout from "../layouts/root-layout.astro";
+import RootLayout from "../layouts/RootLayout.astro";
 ---
 
 <RootLayout title="404 Error">
   <div
-    class="max-w-3xl mx-auto px-4 h-[calc(100vh-14rem)] flex flex-col justify-center items-center gap-2"
+    class="max-w-3xl mx-auto px-4 h-[calc(100vh-8.5rem)] flex flex-col justify-center items-center text-center gap-4"
   >
-    <h1 class="text-neutral-100 text-5xl font-bold">404</h1>
-    <p>This page was not found.</p>
+    <h1 class="text-neutral-100 text-7xl font-bold">404</h1>
+    <h5 class="font-medium">{`UH OH! You're lost.`}</h5>
+    <p class="max-w-prose text-sm">
+      {
+        `The page you are looking for does not exist. How you got here is a mystery. You can click the button below to go back to the homepage.`
+      }
+    </p>
+
+    <a
+      href="/"
+      class="px-4 py-2 rounded-md border font-semibold bg-stone-800 border-stone-600"
+      >Return to Home</a
+    >
   </div>
 </RootLayout>
