@@ -1,8 +1,8 @@
 ---
 import RootLayout from "../layouts/RootLayout.astro";
 import Section from "../components/Section/Section.tsx";
-import Skill from "../components/Skill.tsx";
-import Status from "../components/Status.tsx";
+import Skill from "../components/Skill.astro";
+import Status from "../components/Status.astro";
 import Project from "../components/Project/Project.tsx";
 
 import skills from "../data/skills";
@@ -30,12 +30,15 @@ import projects from "../data/projects";
           </h3>
 
           <div class="flex items-center gap-4">
-            <button
-              class="bg-neutral-950 text-neutral-100 px-6 py-2 rounded-md"
+            <a
+              href="mailto:biharieprawish@gmail.com"
+              class="bg-amber-300 text-amber-900 px-6 py-2 rounded-md font-medium"
             >
               Hire Me
-            </button>
-            <button class="text-neutral-100"> Download CV</button>
+            </a>
+            <a href="#" target="_blank" class="text-neutral-100">
+              Download CV</a
+            >
           </div>
         </div>
       </div>

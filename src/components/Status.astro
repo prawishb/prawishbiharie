@@ -1,0 +1,16 @@
+---
+type Props = {
+  variant?: "primary" | "secondary";
+};
+
+const { variant = "primary", ...rest } = Astro.props as Props;
+
+const className = {
+  primary: "bg-amber-200 text-amber-900 rounded-md py-2 w-full text-center",
+  secondary: "bg-rose-200 text-rose-900 rounded-md py-2 w-full text-center",
+};
+---
+
+<div class="px-4" {...rest}>
+  <div class={className[variant]}><slot /></div>
+</div>
