@@ -1,9 +1,13 @@
 ---
 import RootLayout from "../layouts/RootLayout.astro";
-import Section from "../components/Section/Section.tsx";
+import Section from "../components/Section/Section.astro";
+import SectionContent from "../components/Section/SectionContent.astro";
+import SectionDescription from "../components/Section/SectionDescription.astro";
+import SectionTitle from "../components/Section/SectionTitle.astro";
 import Skill from "../components/Skill.astro";
 import Status from "../components/Status.astro";
 import Project from "../components/Project/Project.tsx";
+import MaxWidth from "../components/MaxWidth.astro";
 
 import skills from "../data/skills";
 import projects from "../data/projects";
@@ -11,14 +15,13 @@ import projects from "../data/projects";
 
 <RootLayout title="Prawish Biharie">
   <Section id="hero">
-    <Section.Content>
-      <div class="flex flex-col justify-between gap-16">
+    <MaxWidth>
+      <SectionContent class="flex flex-col justify-between gap-16">
         <Status>
           {
             `I'm currently searching for new oppurtunities to advance my skills. Contact me here.`
           }
         </Status>
-
         <div
           class="max-w-prose mx-auto flex flex-col items-center text-center gap-2"
         >
@@ -28,7 +31,6 @@ import projects from "../data/projects";
             Electrical engineer turned software pro. Bridging hardware-software
             gap, embracing innovation through continuous learning.
           </h3>
-
           <div class="flex items-center gap-4">
             <a
               href="mailto:biharieprawish@gmail.com"
@@ -41,15 +43,15 @@ import projects from "../data/projects";
             >
           </div>
         </div>
-      </div>
-    </Section.Content>
+      </SectionContent>
+    </MaxWidth>
   </Section>
 
-  <div class="bg-neutral-950 px-4">
-    <Section>
-      <Section.Title>About</Section.Title>
-      <Section.Description>A bit more about me</Section.Description>
-      <Section.Content>
+  <Section class="bg-neutral-900">
+    <MaxWidth>
+      <SectionTitle>About</SectionTitle>
+      <SectionDescription>A bit more about me</SectionDescription>
+      <SectionContent>
         <p class="mb-8 text-center">
           {
             `Hello, I'm Prawish Biharie, a seasoned professional who made a smooth transition from electrical engineering to software engineering, capitalizing on my 3+ years of experience. My background equips me with an analytical mindset and strong problem-solving skills, which I honed in electrical engineering, giving me a unique edge in crafting innovative solutions that bridge the gap between hardware and software realms.`
@@ -60,15 +62,17 @@ import projects from "../data/projects";
             `With an unwavering passion for continuous learning, I constantly explore new methodologies, languages, and tools to stay at the forefront of the dynamic software landscape. This proactive approach ensures that my skills remain finely tuned and pertinent, allowing me to offer fresh perspectives and tackle challenges effectively in this ever-evolving field.`
           }
         </p>
-      </Section.Content>
-    </Section>
+      </SectionContent>
+    </MaxWidth>
+  </Section>
 
-    <Section id="skills">
-      <Section.Title>Skills</Section.Title>
-      <Section.Description>
+  <Section id="skills">
+    <MaxWidth>
+      <SectionTitle>Skills</SectionTitle>
+      <SectionDescription>
         These are all my skills that I aquired during my time programming.
-      </Section.Description>
-      <Section.Content>
+      </SectionDescription>
+      <SectionContent>
         <ul class="flex flex-wrap justify-center gap-4">
           {
             skills.map((skill) => (
@@ -78,50 +82,49 @@ import projects from "../data/projects";
             ))
           }
         </ul>
-      </Section.Content>
-    </Section>
+      </SectionContent>
+    </MaxWidth>
+  </Section>
 
-    <Section id="projects">
-      <Section.Title>Projects</Section.Title>
-      <Section.Description>
+  <Section id="projects">
+    <MaxWidth>
+      <SectionTitle>Projects</SectionTitle>
+      <SectionDescription>
         These are some of my top projects. To see all my projects, visit my
         github profile
-      </Section.Description>
-      <Section.Content>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
-          {
-            projects.map((project) => (
-              <Project>
-                <Project.Image />
-                <Project.Content>
-                  <Project.Name>{project.name}</Project.Name>
-                  <Project.Description>
-                    {project.description}
-                  </Project.Description>
+      </SectionDescription>
+      <SectionContent class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+        {
+          projects.map((project) => (
+            <Project>
+              <Project.Image />
+              <Project.Content>
+                <Project.Name>{project.name}</Project.Name>
+                <Project.Description>{project.description}</Project.Description>
+                {project.tags && (
+                  <ul class="flex items-center gap-2">
+                    {project.tags.map((tag, index) => (
+                      <Project.Tag>{tag}</Project.Tag>
+                    ))}
+                  </ul>
+                )}
+              </Project.Content>
+            </Project>
+          ))
+        }
+      </SectionContent>
+    </MaxWidth>
+  </Section>
 
-                  {project.tags && (
-                    <ul class="flex items-center gap-2">
-                      {project.tags.map((tag, index) => (
-                        <Project.Tag>{tag}</Project.Tag>
-                      ))}
-                    </ul>
-                  )}
-                </Project.Content>
-              </Project>
-            ))
-          }
-        </div>
-      </Section.Content>
-    </Section>
-
-    <Section id="experiences">
-      <Section.Title>Experiences</Section.Title>
-      <Section.Description>
+  <Section id="experiences">
+    <MaxWidth>
+      <SectionTitle>Experiences</SectionTitle>
+      <SectionDescription>
         The highlights of my career journey over the years
-      </Section.Description>
-      <Section.Content>
+      </SectionDescription>
+      <SectionContent>
         <div class="text-center">Work in progress...</div>
-      </Section.Content>
-    </Section>
-  </div>
+      </SectionContent>
+    </MaxWidth>
+  </Section>
 </RootLayout>

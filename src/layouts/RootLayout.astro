@@ -6,7 +6,7 @@ import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="!scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +14,7 @@ import Footer from "../components/Footer.astro";
     <title>{title}</title>
   </head>
   <body
-    class="bg-neutral-900 text-neutral-400 selection:bg-amber-200 selection:text-amber-900 antialiased min-h-screen flex flex-col"
+    class="bg-neutral-950 text-neutral-400 selection:bg-amber-200 selection:text-amber-900 antialiased min-h-screen w-full flex flex-col"
   >
     <Header client:load />
     <div class="flex-1 pt-20">

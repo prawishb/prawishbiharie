@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "../../lib/utils";
+
+type Props = HTMLAttributes<"section"> & {};
+
+const { id, class: className, ...rest } = Astro.props as Props;
+---
+
+<section {...rest} id={id} class={cn("py-20 h-full w-full", className)}>
+  <slot />
+</section>
