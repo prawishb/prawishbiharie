@@ -2,17 +2,17 @@ const projects: TProject[] = [
   {
     name: "Personal Website",
     description: "Personal website created using Astro + React-integration.",
-    tags: ["Astro", "React", "TailwindCSS", "Typescript"]
+    tags: ["Astro", "React", "Tailwind CSS", "Typescript"]
   },
   {
     name: "Coffee Ecommerce Platform",
     description: "Ecommerce platform designed for selling all types of coffee.",
-    tags: ["Next.js", "React", "TailwindCSS", "Typescript"]
+    tags: ["Next.js", "React", "Tailwind CSS", "Typescript"]
   },
   {
     name: "API Endpoint Tester",
     description: "Make sure all your API endpoints are correct.",
-    tags: ["React", "TailwindCSS", "Typescript"]    
+    tags: ["React", "Tailwind CSS", "Typescript"]    
   },
   {
     name: "No Title",

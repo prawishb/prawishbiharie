@@ -5,7 +5,7 @@ type Props = {
 };
 
 const ProjectDescription = ({ children }: Props) => {
-  return <p>{children}</p>;
+  return <p className="text-sm line-clamp-2">{children}</p>;
 };
 
 export default ProjectDescription;

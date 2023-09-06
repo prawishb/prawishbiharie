@@ -4,12 +4,15 @@ const skills: string[] = [
   "Javascript",
   "Typescript",
   "React",
-  "Next",
+  "Next.js",
   "Astro",
   "Node",
-  "TailwindCSS",
+  "Tailwind CSS",
   "Express",
   "PostgreSQL",
+  "Firebase",
+  "Git",
+  "Github"
 ]
 
 export default skills;
