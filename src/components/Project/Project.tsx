@@ -11,7 +11,11 @@ type Props = {
 };
 
 const Project = ({ children }: Props) => {
-  return <div className="flex flex-col gap-4">{children}</div>;
+  return (
+    <a href="#">
+      <div className="flex flex-col gap-4 rounded-md">{children}</div>
+    </a>
+  );
 };
 
 Project.Image = ProjectImage;

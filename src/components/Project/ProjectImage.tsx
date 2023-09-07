@@ -5,7 +5,7 @@ type Props = {
 };
 const ProjectImage = ({ children }: Props) => {
   return (
-    <div className="bg-neutral-800 w-full aspect-video rounded-md">
+    <div className="bg-neutral-300 w-full aspect-video rounded-md">
       {children}
     </div>
   );

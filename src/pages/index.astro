@@ -14,35 +14,27 @@ import projects from "../data/projects";
 ---
 
 <RootLayout title="Prawish Biharie">
-  <Section id="hero">
+  <Section id="hero" class="pt-10">
     <MaxWidth>
-      <SectionContent class="flex flex-col justify-between gap-16">
+      <SectionContent class="h-full flex flex-col justify-between gap-16">
         <Status>
           {
             `I'm currently actively searching for a new job to advance my skills. Contact me `
           }
           <a href="/contact" class="underline">here</a>
         </Status>
+
         <div
           class="max-w-prose mx-auto flex flex-col items-center text-center gap-2"
         >
-          <h1 class="text-neutral-100 text-5xl font-bold">Prawish Biharie</h1>
+          <h1 class="text-neutral-900 text-5xl font-extrabold">
+            Prawish Biharie
+          </h1>
           <span class="font-semibold">Full Stack Developer</span>
           <h3 class="mt-4">
             Electrical engineer turned software pro. Bridging hardware-software
             gap, embracing innovation through continuous learning.
           </h3>
-          <div class="flex items-center gap-4">
-            <a
-              href="mailto:biharieprawish@gmail.com"
-              class="bg-amber-300 text-amber-900 px-6 py-2 rounded-md font-medium"
-            >
-              Hire Me
-            </a>
-            <a href="#" target="_blank" class="text-neutral-100">
-              Download CV</a
-            >
-          </div>
         </div>
       </SectionContent>
     </MaxWidth>
@@ -50,8 +42,10 @@ import projects from "../data/projects";
 
   <Section class="bg-neutral-900">
     <MaxWidth>
-      <SectionTitle>About</SectionTitle>
-      <SectionDescription>A bit more about me</SectionDescription>
+      <SectionTitle class="text-neutral-100">About</SectionTitle>
+      <SectionDescription class="text-neutral-400">
+        A bit more about me
+      </SectionDescription>
       <SectionContent>
         <p class="mb-8 text-center">
           {
@@ -100,8 +94,6 @@ import projects from "../data/projects";
             <Project>
               <Project.Image />
               <Project.Content>
-                <Project.Name>{project.name}</Project.Name>
-                <Project.Description>{project.description}</Project.Description>
                 {project.tags && (
                   <ul class="flex items-center gap-2">
                     {project.tags.map((tag, index) => (
@@ -109,6 +101,8 @@ import projects from "../data/projects";
                     ))}
                   </ul>
                 )}
+                <Project.Name>{project.name}</Project.Name>
+                <Project.Description>{project.description}</Project.Description>
               </Project.Content>
             </Project>
           ))

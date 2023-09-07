@@ -5,7 +5,7 @@ type Props = {
 };
 const ProjectTag = ({ children }: Props) => {
   return (
-    <li className="bg-amber-300 text-amber-900 px-2 py-px text-sm rounded-md w-fit">
+    <li className="bg-amber-200 text-amber-700 px-2 py-1 text-[.625rem] uppercase font-bold rounded-full w-fit">
       {children}
     </li>
   );

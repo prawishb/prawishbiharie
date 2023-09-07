@@ -26,7 +26,7 @@ const Header = () => {
       }}
       animate={isHeaderHidden ? "hidden" : "visible"}
       transition={{ duration: 0.25, ease: "easeInOut" }}
-      className="bg-neutral-950/60 backdrop-blur-md text-neutral-100 fixed top-0 inset-x-0 z-[9999]"
+      className="bg-neutral-50 text-neutral-800 fixed top-0 inset-x-0 z-[9999]"
     >
       <nav className="max-w-3xl mx-auto p-4 h-20 w-full flex items-center justify-between">
         <a href="/">

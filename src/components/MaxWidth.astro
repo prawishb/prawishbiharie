@@ -7,4 +7,6 @@ type Props = HTMLAttributes<"div"> & {};
 const { class: className } = Astro.props as Props;
 ---
 
-<div class={cn("max-w-3xl mx-auto px-4", className)}><slot /></div>
+<div class={cn("max-w-3xl mx-auto px-4 h-full w-full", className)}>
+  <slot />
+</div>

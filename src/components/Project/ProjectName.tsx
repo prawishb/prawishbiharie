@@ -5,7 +5,7 @@ type Props = {
 };
 
 const ProjectName = ({ children }: Props) => {
-  return <h4 className="text-xl font-semibold">{children}</h4>;
+  return <h4 className="text-neutral-800 text-xl font-semibold">{children}</h4>;
 };
 
 export default ProjectName;
